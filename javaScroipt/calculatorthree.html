@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="D:\New folder\javaScroipt\calculaterthree.css">
+</head>
+
+<body>
+    <div class="calculator">
+        <div class="inputbox">
+            <input id="firstbox" type="text" value="" class="inputbox"><br><br>
+            <input id="secondbox" type="text" value="" class="inputbox"><br><br>
+        </div>
+        <div class="buttonsize">
+            <div class="firstrow">
+                <button onclick="number(7)" id="number7" class="number">7</button>
+                <button onclick="number(8)" id="number8"class="number">8</button>
+                <button onclick="number(9)" id="number9" class="number">9</button>
+                <button onclick="operator('/')" id="division" class="operator">%</button><br><br>
+            </div>
+            <div class="secondrow">
+                <button onclick="number(4)" id="number4" class="number">4</button>
+                <button onclick="number(5)" id="number5"class="number">5</button>
+                <button onclick="number(6)" id="number6" class="number">6</button>
+                <button onclick="operator('*')"id="maltiplication" class="operator">X</button><br><br>
+            </div>
+            <div class="thirdrow">
+                <button onclick="number(1)" id="number1" class="number">1</button>
+                <button onclick="number(2)" id="number2" class="number">2</button>
+                <button onclick="number(3)" id="number3" class="number">3</button>
+                <button onclick="operator('-')" id="subtration"  class="operator">-</button><br><br>
+            </div>
+            <div class="fifthrow">
+                <button onclick="number(0)"     id="number0"    class="number">0</button>
+                <button onclick="number('.')"   id="dot"    class="number">.</button>
+                <button onclick="operator('+')"   id="addition"    class="number">+</button>
+                <button onclick="equaltwo()"   id="equaltwo"    class="operator">=</button><br><br>
+                <button onclick="deletebutton()"   id="deletebutton"  style="width: 21vw;"  class="number">Delete</button>
+            </div>
+
+        </div>
+    </div>
+    <script>
+var operand1=document.getElementById("firstbox")
+var result=document.getElementById("secondbox")
+var number11
+var number12
+var opertorr
+function number(num)
+{
+    if(!operand1.value){
+  operand1.value+=num;
+  number11=num; 
+    } 
+    else if(operand1.value==opertorr)
+    {
+        operand1.value=null;
+        number12=num;
+        operand1.value=number12;
+    }
+}
+function operator(operatr)
+{
+     if(operand1.value)
+    {
+        operand1.value=null;
+        opertorr=operatr;
+        operand1.value=opertorr;
+    }
+    
+    
+}
+function equaltwo(){
+    console.log(number11,number12);
+            if (opertorr == '+') 
+            {
+              result. value = (parseInt(number11) + parseInt(number12))
+            }
+            else if(opertorr == '-')
+            {
+                result.value = (number11 - number12) 
+            }
+            else if(opertorr == '*')
+            {
+                result.value = (number11* number12) 
+            }
+            else if(opertorr == '/')
+            {
+                result.value = (number11/ number12)
+            }
+           
+        }
+    </script>
+
+
